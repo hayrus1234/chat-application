@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    
+    
+    <div id="game">
+    <style>
+      body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
+      #form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
+      #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
+      #input:focus { outline: none; }
+      #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages > li { padding: 0.5rem 1rem; }
+      #messages > li:nth-child(odd) { background: #efefef; }
+    </style>
+  </head>
+  <body>
+    <ul id="messages"></ul>
+    <form id="form" action="">
+      <input id="input" autocomplete="off" /><button>Send</button>
+    </form>
+    <script src="/socket.io.min.js"></script>
+    <script>document.getElementById("game").style.visibility="hidden"</script>
+    
+    <script src="/socket.js" type="module"></script>
+
+  </div>
+  
+    
+    
+    
+    
+    <div id="LoginPage">
+      <p id="printnickname">Enter Your Name </p>
+
+        <form id ="form" action="/signin" method="POST" onsubmit="start(event)">
+        <label for="nickname">Nick Name:</label>
+        <input type="text" id="nickname"  name="nickname"><br><br>
+        <input  type="submit" value="Go play">
+        <p id="RandomNumber"></p>
+        <!-- <button onclick="getRandomArbitrary()">Next Number</button> -->
+      </form>
+      <script>    
+        function start(event) {
+          document.getElementById("game").style.visibility="visible"
+          document.getElementById("LoginPage").style.visibility="hidden"
+
+        event.preventDefault(); 
+        let inputfield= document.getElementById("nickname")
+        var nick= inputfield.value
+        nick = nick.trim()
+        if(nick==""){
+            document.getElementById("incaseError").innerHTML="Please enter a name"
+            return 
+        }
+        document.getElementById("printnickname").innerHTML="Welcome to the game: " + nick
+        window.nick = nick
+
+      }
+        </script>
+      
+    </div>
+  </body>
+</html>

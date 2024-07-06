@@ -1,0 +1,17 @@
+{
+  "name": "bingo",
+  "version": "1.0.0",
+  "description": "A simple multiplayer bingo game",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server",
+    "watch": "nodemon --watch src server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5"
+  }
+}
