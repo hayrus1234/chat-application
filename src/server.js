@@ -42,3 +42,8 @@ io.on('connection', (socket) => {
 server.listen(PORT, () => {
   console.log(`listening on *:${PORT}`);
 });
+
+//health check
+app.get('/health', (req, res) => {
+  res.send('OK')
+})
