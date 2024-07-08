@@ -47,3 +47,11 @@ server.listen(PORT, () => {
 app.get('/health', (req, res) => {
   res.send('byee')
 })
+
+//user page for displaying all connected users
+app.get('/users', (req, res) => {
+  res.send(io.sockets.sockets)
+  
+})
+
+
