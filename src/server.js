@@ -45,5 +45,5 @@ server.listen(PORT, () => {
 
 //health check
 app.get('/health', (req, res) => {
-  res.send('OK')
+  res.send('Hello')
 })
