@@ -48,10 +48,11 @@ app.get('/health', (req, res) => {
   res.send('byee')
 })
 
-//user page for displaying all connected users
+//user page for displaying all connected users with the nickname they enetered
 app.get('/users', (req, res) => {
-  res.send(io.sockets.sockets)
-  
+  res.send('users')
+  res.render('users', {users: users})
+  console.log(users)
 })
 
 
