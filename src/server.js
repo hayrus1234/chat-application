@@ -45,7 +45,7 @@ server.listen(PORT, () => {
 
 //health check
 app.get('/health', (req, res) => {
-  res.send('byee')
+  res.send('Hello World')
 })
 
 //user page for displaying all connected users with the nickname they enetered
